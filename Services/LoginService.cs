@@ -23,30 +23,30 @@ namespace API_Investidor.Services
     public class LoginService : RootService, ILoginService
     {
         private JwtTokenConfig _jwtTokenConfig;
+        private TokensRepository _tokensRepository;
 
         public LoginService( 
             IActionContextAccessor actionContextAccessor,
+            TokensRepository tokensRepository,
             JwtTokenConfig jwtTokenConfig) : base(actionContextAccessor)
         {
             _jwtTokenConfig = jwtTokenConfig;
+            _tokensRepository = tokensRepository;
         }
 
         public TokenInformation GerarJWT(LoginCheckCode dados)
         {
-            return default;
-
-/*            var cliente = _clientesRepository.GetClientePorTelefone(dados.Telefone);
+            var token = _tokensRepository.ValidarClienteToken(dados);
             
-            if (cliente == null)
+            if (token == null)
             {
-                AddModelError("Não foi possível validar o usuário.");
+                AddModelError("Não foi possível validar o código informado.");
                 return(default);
             }
 
             var claims = new ClaimsIdentity(new Claim[]
             {
-                    new Claim("IdCliente", cliente.IDCLIENTE.ToString()),
-                    new Claim("Telefone", dados.Telefone)
+                    new Claim("IdCliente", token.IDCLIENTE.ToString())
             });
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -58,13 +58,13 @@ namespace API_Investidor.Services
                 Expires = ExpiresToken,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenJWT = tokenHandler.CreateToken(tokenDescriptor);
 
             var tokenInformation = new TokenInformation();
             tokenInformation.Expiration = ExpiresToken;
-            tokenInformation.AccessToken = tokenHandler.WriteToken(token);
+            tokenInformation.AccessToken = tokenHandler.WriteToken(tokenJWT);
 
-            return tokenInformation;*/
+            return tokenInformation;
         }
     }
 }
