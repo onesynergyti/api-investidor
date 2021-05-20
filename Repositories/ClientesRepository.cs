@@ -15,8 +15,6 @@ namespace API_Investidor.Repositories
         PagedResult<Cliente> GetClientes(FiltroClientesModel model);
 
         Cliente GetCliente(int idCliente);
-
-        Cliente GetClientePorTelefone(string telefone);
     }
 
     public class ClientesRepository : RootRepository<Cliente>, IClientesRepository
@@ -35,11 +33,6 @@ namespace API_Investidor.Repositories
         public Cliente GetCliente(int idCliente)
         {
             return _InvestidorContext.cliente.Where(c => c.IDCLIENTE == idCliente).FirstOrDefault();
-        }
-
-        public Cliente GetClientePorTelefone(string telefone)
-        {
-            return _InvestidorContext.cliente.Where(c => c.TELEFONE == telefone).FirstOrDefault();
         }
     }
 }

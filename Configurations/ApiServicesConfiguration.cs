@@ -11,15 +11,17 @@ namespace API_Investidor.Configurations
 {
     public static class ApiServicesConfiguration
     {
-        public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddApiServices(this IServiceCollection services)
         {
-            //   services.Configure<Class>(configuration.GetSection("Class"));
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
             services.AddTransient<ICategoriasService, CategoriasService>();
             services.AddTransient<IClientesService, ClientesService>();
             services.AddTransient<IArtigosService, ArtigosService>();
             services.AddTransient<IEBooksService, EBooksService>();
             services.AddTransient<ILivesService, LivesService>();
+            services.AddTransient<IZenviaService, ZenviaService>();
+            services.AddTransient<ILoginService, LoginService>();
+            services.AddTransient<ITokensService, TokensService>();
 
             return services;
         }

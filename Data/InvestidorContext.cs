@@ -17,6 +17,7 @@ namespace API_Investidor.Data
         public DbSet<Artigo> artigo { get; set; }
         public DbSet<EBook> ebook { get; set; }
         public DbSet<Live> live { get; set; }
+        public DbSet<Token> token { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,26 +25,26 @@ namespace API_Investidor.Data
                 .HasKey(t => t.IDCATEGORIA);
 
             modelBuilder.Entity<Categoria>()
-            .Property(t => t.IDCATEGORIA)
-            .ValueGeneratedOnAdd();
+                .Property(t => t.IDCATEGORIA)
+                .ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Cliente>()
                 .HasKey(t => t.IDCLIENTE);
 
             modelBuilder.Entity<Cliente>()
-            .Property(t => t.IDCLIENTE)
-            .ValueGeneratedOnAdd();
+                .Property(t => t.IDCLIENTE)
+                .ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Artigo>()
                 .HasKey(t => t.IDARTIGO);
 
             modelBuilder.Entity<Artigo>()
-                .HasOne(d => d.CLIENTE)
+                .HasOne(t => t.CLIENTE)
                 .WithMany()
                 .HasForeignKey("IDCLIENTE");
 
             modelBuilder.Entity<Artigo>()
-                .HasOne(d => d.CATEGORIA)
+                .HasOne(t => t.CATEGORIA)
                 .WithMany()
                 .HasForeignKey("IDCATEGORIA");
 
@@ -51,7 +52,7 @@ namespace API_Investidor.Data
                 .HasKey(t => t.IDEBOOK);
 
             modelBuilder.Entity<EBook>()
-                .HasOne(d => d.CLIENTE)
+                .HasOne(t => t.CLIENTE)
                 .WithMany()
                 .HasForeignKey("IDCLIENTE");
 
@@ -59,14 +60,21 @@ namespace API_Investidor.Data
                 .HasKey(t => t.IDLIVE);
 
             modelBuilder.Entity<Live>()
-                .HasOne(d => d.CLIENTE)
+                .HasOne(t => t.CLIENTE)
                 .WithMany()
                 .HasForeignKey("IDCLIENTE");
 
             modelBuilder.Entity<Live>()
-                .HasOne(d => d.CATEGORIA)
+                .HasOne(t => t.CATEGORIA)
                 .WithMany()
                 .HasForeignKey("IDCATEGORIA");
+
+            modelBuilder.Entity<Token>()
+                .HasKey(t => t.IDTOKEN);
+
+            modelBuilder.Entity<Token>()
+                .Property(t => t.IDTOKEN)
+                .ValueGeneratedOnAdd();
         }
     }
 }

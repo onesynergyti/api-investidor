@@ -30,7 +30,8 @@ namespace API_Investidor
 
             services.AddSQLServer(Configuration);
             services.AddRepositories();
-            services.AddApiServices(Configuration);
+            services.AddApiServices();
+            services.AddOptions(Configuration);
             services.AddJWT(Configuration);
             services.AddSwagger();
             services.AddApiCors();

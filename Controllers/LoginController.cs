@@ -21,14 +21,10 @@ namespace API_Investidor.Controllers
 
         [HttpPost("AskCode")]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult AskCode([FromBody] LoginAskCode dados)
-        {
-            _loginService.GerarCodigo(dados);
-            return CustomResponse();
-        }
+        public IActionResult AskCode([FromBody] LoginAskCode dados) => CustomResponse(_loginService.GerarToken(dados));
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult Login([FromBody] LoginCheckCode dados) => CustomResponse(_loginService.ValidarCodigo(dados));
+        public IActionResult Login([FromBody] LoginCheckCode dados) => CustomResponse(/*_loginService.ValidarCodigo(dados)*/);
     }
 }

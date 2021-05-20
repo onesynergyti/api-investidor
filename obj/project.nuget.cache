@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HALSP8De6WsJYqcK+yKyejFFlvrpiKaRSsAbAVnxi3a5/2yLw+oiSPJ10PX/qk5LdCvZXKpV4SlEE8v0i8TNcA==",
+  "dgSpecHash": "YchTphAzykVU0M6UywiTsE8FpmWuitvyWzL5BjJqt4bamSc1Nm8ql45A65dZvVCot9jI7XvlwGdQjtZLwjF2hw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\Investidor_api\\API-Investidor\\API-Investidor.csproj",
+  "projectFilePath": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\API-Investidor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Claudio Camargos\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.6\\microsoft.aspnetcore.authentication.jwtbearer.5.0.6.nupkg.sha512",
     "C:\\Users\\Claudio Camargos\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.6\\microsoft.aspnetcore.jsonpatch.5.0.6.nupkg.sha512",

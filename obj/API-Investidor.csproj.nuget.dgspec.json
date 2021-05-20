@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\Investidor_api\\API-Investidor\\API-Investidor.csproj": {}
+    "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\API-Investidor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\Investidor_api\\API-Investidor\\API-Investidor.csproj": {
+    "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\API-Investidor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\Investidor_api\\API-Investidor\\API-Investidor.csproj",
+        "projectUniqueName": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\API-Investidor.csproj",
         "projectName": "API-Investidor",
-        "projectPath": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\Investidor_api\\API-Investidor\\API-Investidor.csproj",
+        "projectPath": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\API-Investidor.csproj",
         "packagesPath": "C:\\Users\\Claudio Camargos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\Investidor_api\\API-Investidor\\obj\\",
+        "outputPath": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Claudio Camargos\\AppData\\Roaming\\NuGet\\NuGet.Config",

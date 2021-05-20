@@ -16,6 +16,7 @@ namespace API_Investidor.Configurations
             services.AddTransient<IArtigosRepository, ArtigosRepository>();
             services.AddTransient<IEBooksRepository, EBooksRepository>();
             services.AddTransient<ILivesRepository, LivesRepository>();
+            services.AddTransient<ITokensRepository, TokensRepository>();
 
             return services;
         }
