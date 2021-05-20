@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API_Investidor.Models.Login
+namespace API_Investidor.Models.Token
 {
-    public class LoginCheckCode
+    public class TokenAskCode
     {
         public string Auth { get; set; }
-
-        public string Code { get; set; }
     }
 }

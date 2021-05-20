@@ -18,8 +18,9 @@ namespace API_Investidor.Repositories
 
         public Token GetClienteToken(int idCliente)
         {
+            var dataLimite = DateTime.Now;
             return _InvestidorContext.token
-                .Where(t => t.IDCLIENTE == idCliente && t.DATAEXPIRA < DateTime.Now)
+                .Where(t => t.IDCLIENTE == idCliente && t.DATAEXPIRA > dataLimite)
                 .FirstOrDefault();
         }
     }

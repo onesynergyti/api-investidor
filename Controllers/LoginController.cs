@@ -12,16 +12,12 @@ namespace API_Investidor.Controllers
     [ApiController]
     public class LoginController : RootController
     {
-        private readonly ILoginService _loginService;
+        private readonly ILoginService _service;
 
-        public LoginController(ILoginService loginService)
+        public LoginController(ILoginService service)
         {
-            _loginService = loginService;
+            _service = service;
         }
-
-        [HttpPost("AskCode")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult AskCode([FromBody] LoginAskCode dados) => CustomResponse(_loginService.GerarToken(dados));
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]

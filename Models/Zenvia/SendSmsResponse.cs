@@ -5,6 +5,11 @@ using System.Threading.Tasks;
 
 namespace API_Investidor.Models.Zenvia
 {
+    public class ReturnSendSmsResponse
+    {
+        public SendSmsResponse sendSmsResponse { get; set; }
+    }
+
     public class SendSmsResponse
     {
         public string statusCode { get; set; }

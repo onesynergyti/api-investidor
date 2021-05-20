@@ -20,6 +20,7 @@ namespace API_Investidor.Configurations
             services.AddTransient<IEBooksService, EBooksService>();
             services.AddTransient<ILivesService, LivesService>();
             services.AddTransient<IZenviaService, ZenviaService>();
+            services.AddTransient<ISMTPService, SMTPService>();
             services.AddTransient<ILoginService, LoginService>();
             services.AddTransient<ITokensService, TokensService>();
 

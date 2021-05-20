@@ -10,5 +10,11 @@ namespace API_Investidor.Options
         public string UriSendMessage { get; set; }
 
         public string Authorization { get; set; }
+
+        public string From { get; set; }
+
+        public string MensagemCodigo { get; set; }
+
+        public string TagCodigo { get; set; }
     }
 }

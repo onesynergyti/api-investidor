@@ -14,7 +14,7 @@ namespace API_Investidor.Services
 {
     public interface IZenviaService
     {
-        Task<SendSmsResponse> EnviarSMSAsync(SendSmsRequest request);
+        Task<SendSmsResponse> EnviarCodigoSMSAsync(string numero, string codigo);
     }
 
     public class ZenviaService : IZenviaService
@@ -31,16 +31,26 @@ namespace API_Investidor.Services
         }
 
 
-        public async Task<SendSmsResponse> EnviarSMSAsync(SendSmsRequest request)
+        public async Task<SendSmsResponse> EnviarCodigoSMSAsync(string numero, string codigo)
         {
+            // Garante o código DDI Brasil
+            numero = numero.Substring(0, 2) == "55" ? numero : "55" + numero;
+
+            SendSmsRequest request = new SendSmsRequest
+            {
+                from = _zenviaOptions.Value.From,
+                msg = _zenviaOptions.Value.MensagemCodigo.Replace(_zenviaOptions.Value.TagCodigo, codigo),
+                to = numero
+            };
+
             var json = new StringContent(
-                JsonSerializer.Serialize(request),
+                JsonSerializer.Serialize(new { sendSmsRequest = request }),
                 Encoding.UTF8,
                 "application/json");
 
-            var response = await _httpClient.PostAsync(_zenviaOptions.Value.UriSendMessage, json);
+            var response = await (await _httpClient.PostAsync(_zenviaOptions.Value.UriSendMessage, json)).Content.ReadAsStringAsync();
 
-            return JsonSerializer.Deserialize<SendSmsResponse>(await response.Content.ReadAsStringAsync());
+            return JsonSerializer.Deserialize<ReturnSendSmsResponse>(response).sendSmsResponse;
         }
     }
 }

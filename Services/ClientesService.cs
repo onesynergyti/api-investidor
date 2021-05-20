@@ -42,7 +42,8 @@ namespace API_Investidor.Services
                 IDHOTMART = cliente.IDHOTMART,
                 NOMECLIENTE = cliente.NOMECLIENTE,
                 PLANO = cliente.PLANO,
-                STATUS = 'A'
+                STATUS = 'A',
+                TELEFONE = cliente.TELEFONE
             });
         }
 
@@ -61,6 +62,7 @@ namespace API_Investidor.Services
                 clienteAtual.NOMECLIENTE = cliente.NOMECLIENTE;
                 clienteAtual.PLANO = cliente.PLANO;
                 clienteAtual.STATUS = cliente.STATUS;
+                clienteAtual.TELEFONE = cliente.TELEFONE;
 
                 _repository.Update(clienteAtual);
             }
