@@ -126,3 +126,7 @@ C:\Users\Claudio Camargos\Documents\Projetos\Freelancers\api-investidor\obj\Debu
 C:\Users\Claudio Camargos\Documents\Projetos\Freelancers\api-investidor\obj\Debug\net5.0\ref\API-Investidor.dll
 C:\Users\Claudio Camargos\Documents\Projetos\Freelancers\api-investidor\obj\Debug\net5.0\API-Investidor.pdb
 C:\Users\Claudio Camargos\Documents\Projetos\Freelancers\api-investidor\obj\Debug\net5.0\API-Investidor.genruntimeconfig.cache
+C:\Users\Claudio Camargos\Documents\Projetos\Freelancers\api-investidor\bin\Debug\net5.0\MailKit.dll
+C:\Users\Claudio Camargos\Documents\Projetos\Freelancers\api-investidor\bin\Debug\net5.0\MimeKit.dll
+C:\Users\Claudio Camargos\Documents\Projetos\Freelancers\api-investidor\bin\Debug\net5.0\NETCore.MailKit.dll
+C:\Users\Claudio Camargos\Documents\Projetos\Freelancers\api-investidor\bin\Debug\net5.0\BouncyCastle.Crypto.dll

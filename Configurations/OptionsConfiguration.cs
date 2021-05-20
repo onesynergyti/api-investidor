@@ -13,6 +13,7 @@ namespace API_Investidor.Configurations
         public static IServiceCollection AddOptions(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<ZenviaOptions>(configuration.GetSection("ZenviaOptions"));
+            services.Configure<EmailOptions>(configuration.GetSection("EmailOptions"));
 
             return services;
         }

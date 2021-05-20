@@ -1,4 +1,4 @@
-﻿using API_Investidor.Data.Entities;
+﻿using API_Investidor.Data;
 using API_Investidor.Models.Token;
 using API_Investidor.Repositories;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -18,14 +18,18 @@ namespace API_Investidor.Services
         protected readonly ITokensRepository _repository;
         protected readonly IClientesRepository _clientesRepository;
         protected readonly IZenviaService _zenviaService;
+        protected readonly ISMTPService _SMTPService;
 
         public TokensService(
             IClientesRepository clientesRepository,
-            IZenviaService zenviaService, ITokensRepository repository, 
+            IZenviaService zenviaService, 
+            ITokensRepository repository,
+            ISMTPService SMTPService,
             IActionContextAccessor actionContextAccessor) : base(actionContextAccessor)
         {
             _clientesRepository = clientesRepository;
             _zenviaService = zenviaService;
+            _SMTPService = SMTPService;
             _repository = repository;
         }
 
@@ -51,7 +55,7 @@ namespace API_Investidor.Services
         {
             if (destino.Contains("@"))
             {
-                // Enviar e-mail
+                _SMTPService.EnviarCodigoEmailAsync(destino, token);
             }
             else
             {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace API_Investidor.Data.Entities
+namespace API_Investidor.Data
 {
     public class EBook
     {

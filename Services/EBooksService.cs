@@ -1,4 +1,4 @@
-﻿using API_Investidor.Data.Entities;
+﻿using API_Investidor.Data;
 using API_Investidor.Models;
 using API_Investidor.Models.EBooks;
 using API_Investidor.Repositories;
@@ -8,9 +8,9 @@ namespace API_Investidor.Services
 {
     public interface IEBooksService
     {
-        PagedResult<EBook> GetEBooks(FiltroEBooksModel model);
+        PagedResult<EBook> GetEBooks(FiltroEBooksModel model, bool permitePrivado);
 
-        EBook GetEBook(int idArtigo);
+        EBook GetEBook(int idArtigo, bool permitePrivado);
     }
 
     public class EBooksService : RootService, IEBooksService
@@ -22,8 +22,8 @@ namespace API_Investidor.Services
             _repository = repository;
         }
 
-        public PagedResult<EBook> GetEBooks(FiltroEBooksModel model) => _repository.GetEBooks(model);
+        public PagedResult<EBook> GetEBooks(FiltroEBooksModel model, bool permitePrivado) => _repository.GetEBooks(model, permitePrivado);
 
-        public EBook GetEBook(int idArtigo) => _repository.GetEBook(idArtigo);
+        public EBook GetEBook(int idArtigo, bool permitePrivado) => _repository.GetEBook(idArtigo, permitePrivado);
     }
 }

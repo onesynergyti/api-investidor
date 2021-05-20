@@ -1,4 +1,4 @@
-﻿using API_Investidor.Data.Entities;
+﻿using API_Investidor.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,6 +18,8 @@ namespace API_Investidor.Data
         public DbSet<EBook> ebook { get; set; }
         public DbSet<Live> live { get; set; }
         public DbSet<Token> token { get; set; }
+        public DbSet<Grupo> grupo { get; set; }
+        public DbSet<Chat> chat { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -74,6 +76,31 @@ namespace API_Investidor.Data
 
             modelBuilder.Entity<Token>()
                 .Property(t => t.IDTOKEN)
+                .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Grupo>()
+                .HasKey(t => t.IDGRUPO);
+
+            modelBuilder.Entity<Grupo>()
+                .HasOne(t => t.CATEGORIA)
+                .WithMany()
+                .HasForeignKey("IDCATEGORIA");
+
+            modelBuilder.Entity<Chat>()
+                .HasKey(t => t.IDMENSAGEM);
+
+            modelBuilder.Entity<Chat>()
+                .HasOne(t => t.GRUPO)
+                .WithMany()
+                .HasForeignKey("IDGRUPO");
+
+            modelBuilder.Entity<Chat>()
+                .HasOne(t => t.CLIENTE)
+                .WithMany()
+                .HasForeignKey("IDCLIENTE");
+
+            modelBuilder.Entity<Chat>()
+                .Property(t => t.IDMENSAGEM)
                 .ValueGeneratedOnAdd();
         }
     }

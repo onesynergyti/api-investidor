@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API_Investidor.Data.Entities
+namespace API_Investidor.Data
 {
     public class Cliente
     {

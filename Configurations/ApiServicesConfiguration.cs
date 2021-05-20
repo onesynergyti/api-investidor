@@ -18,6 +18,7 @@ namespace API_Investidor.Configurations
             services.AddTransient<ISMTPService, SMTPService>();
             services.AddTransient<ILoginService, LoginService>();
             services.AddTransient<ITokensService, TokensService>();
+            services.AddTransient<IChatService, ChatService>();
 
             return services;
         }

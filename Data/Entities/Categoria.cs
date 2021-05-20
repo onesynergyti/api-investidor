@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace API_Investidor.Data.Entities
+namespace API_Investidor.Data
 {
     public class Categoria
     {

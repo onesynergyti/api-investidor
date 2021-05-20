@@ -1,4 +1,4 @@
-﻿using API_Investidor.Data.Entities;
+﻿using API_Investidor.Data;
 using API_Investidor.Models;
 using API_Investidor.Models.Lives;
 using API_Investidor.Repositories;
@@ -12,9 +12,9 @@ namespace API_Investidor.Services
 {
     public interface ILivesService
     {
-        PagedResult<Live> GetLives(FiltroLivesModel model);
+        PagedResult<Live> GetLives(FiltroLivesModel model, bool permitePrivado);
 
-        Live GetLive(int idLive);
+        Live GetLive(int idLive, bool permitePrivado);
     }
 
     public class LivesService : RootService, ILivesService
@@ -26,8 +26,8 @@ namespace API_Investidor.Services
             _repository = repository;
         }
 
-        public PagedResult<Live> GetLives(FiltroLivesModel model) => _repository.GetLives(model);
+        public PagedResult<Live> GetLives(FiltroLivesModel model, bool permitePrivado) => _repository.GetLives(model, permitePrivado);
 
-        public Live GetLive(int idLive) => _repository.GetLive(idLive);
+        public Live GetLive(int idLive, bool permitePrivado) => _repository.GetLive(idLive, permitePrivado);
     }
 }

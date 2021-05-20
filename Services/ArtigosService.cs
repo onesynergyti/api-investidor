@@ -1,4 +1,4 @@
-﻿using API_Investidor.Data.Entities;
+﻿using API_Investidor.Data;
 using API_Investidor.Models;
 using API_Investidor.Models.Artigos;
 using API_Investidor.Repositories;
@@ -8,9 +8,9 @@ namespace API_Investidor.Services
 {
     public interface IArtigosService
     {
-        PagedResult<Artigo> GetArtigos(FiltroArtigosModel model);
+        PagedResult<Artigo> GetArtigos(FiltroArtigosModel model, bool permitePrivado);
 
-        Artigo GetArtigo(int idArtigo);
+        Artigo GetArtigo(int idArtigo, bool permitePrivado);
     }
 
     public class ArtigosService : RootService, IArtigosService
@@ -22,9 +22,9 @@ namespace API_Investidor.Services
             _repository = repository;
         }
 
-        public PagedResult<Artigo> GetArtigos(FiltroArtigosModel model) => _repository.GetArtigos(model);
+        public PagedResult<Artigo> GetArtigos(FiltroArtigosModel model, bool permitePrivado) => _repository.GetArtigos(model, permitePrivado);
 
-        public Artigo GetArtigo(int idArtigo) => _repository.GetArtigo(idArtigo);
+        public Artigo GetArtigo(int idArtigo, bool permitePrivado) => _repository.GetArtigo(idArtigo, permitePrivado);
     }
 
 }

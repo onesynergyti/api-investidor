@@ -1,4 +1,5 @@
-﻿using API_Investidor.Data.Entities;
+﻿using API_Investidor.Data;
+using API_Investidor.Helpers;
 using API_Investidor.Models;
 using API_Investidor.Models.Lives;
 using API_Investidor.Services;
@@ -23,10 +24,10 @@ namespace API_Investidor.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<Live>))]
-        public IActionResult Get([FromQuery] FiltroLivesModel model) => CustomResponse(_service.GetLives(model));
+        public IActionResult Get([FromQuery] FiltroLivesModel model) => CustomResponse(_service.GetLives(model, User.GetClienteLogado()));
 
         [HttpGet("{idLive}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Live))]
-        public IActionResult GetId(int idLive) => CustomResponse(_service.GetLive(idLive));
+        public IActionResult GetId(int idLive) => CustomResponse(_service.GetLive(idLive, User.GetClienteLogado()));
     }
 }

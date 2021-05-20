@@ -17,6 +17,7 @@ namespace API_Investidor.Repositories
 
     public class RootRepository<T> : IRootRepository<T>
     {
+        protected const string REGRA_PUBLICA = "PUBLICO";
         protected readonly InvestidorContext _InvestidorContext;
 
         public RootRepository(InvestidorContext InvestidorContext)

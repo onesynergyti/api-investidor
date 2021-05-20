@@ -1,4 +1,5 @@
-﻿using API_Investidor.Data.Entities;
+﻿using API_Investidor.Data;
+using API_Investidor.Helpers;
 using API_Investidor.Models;
 using API_Investidor.Models.EBooks;
 using API_Investidor.Services;
@@ -23,10 +24,10 @@ namespace API_Investidor.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<EBook>))]
-        public IActionResult Get([FromQuery] FiltroEBooksModel model) => CustomResponse(_service.GetEBooks(model));
+        public IActionResult Get([FromQuery] FiltroEBooksModel model) => CustomResponse(_service.GetEBooks(model, User.GetClienteLogado()));
 
         [HttpGet("{idEBook}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EBook))]
-        public IActionResult GetId(int idEBook) => CustomResponse(_service.GetEBook(idEBook));
+        public IActionResult GetId(int idEBook) => CustomResponse(_service.GetEBook(idEBook, User.GetClienteLogado()));
     }
 }

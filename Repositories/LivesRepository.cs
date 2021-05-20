@@ -1,5 +1,4 @@
 ﻿using API_Investidor.Data;
-using API_Investidor.Data.Entities;
 using API_Investidor.Helpers;
 using API_Investidor.Models;
 using API_Investidor.Models.Lives;
@@ -13,29 +12,31 @@ namespace API_Investidor.Repositories
 {
     public interface ILivesRepository : IRootRepository<Live>
     {
-        PagedResult<Live> GetLives(FiltroLivesModel model);
+        PagedResult<Live> GetLives(FiltroLivesModel model, bool permitePrivado);
 
-        Live GetLive(int idLive);
+        Live GetLive(int idLive, bool permitePrivado);
     }
 
     public class LivesRepository : RootRepository<Live>, ILivesRepository
     {
         public LivesRepository(InvestidorContext InvestidorContext) : base(InvestidorContext) { }
 
-        public PagedResult<Live> GetLives(FiltroLivesModel model)
+        public PagedResult<Live> GetLives(FiltroLivesModel model, bool permitePrivado)
         {
             return _InvestidorContext.live
-                .Include(e => e.CLIENTE)
-                .Include(e => e.CATEGORIA)
-                .Where(e => model.Id == null || e.IDLIVE == model.Id)
-                .Where(e => model.Nome == default || e.DESCRICAO_BREVE.Contains(model.Nome))
+                .Include(l => l.CLIENTE)
+                .Include(l => l.CATEGORIA)
+                .Where(l => model.Id == null || l.IDLIVE == model.Id)
+                .Where(l => model.Nome == default || l.DESCRICAO_BREVE.Contains(model.Nome))
+                .Where(l => permitePrivado || l.REGRA == REGRA_PUBLICA)
                 .GetPaged(model.PageNumber, model.PageSize);
         }
 
-        public Live GetLive(int idEBook)
+        public Live GetLive(int idEBook, bool permitePrivado)
         {
             var live = _InvestidorContext.live
-                .Where(e => e.IDLIVE == idEBook)
+                .Where(l => l.IDLIVE == idEBook)
+                .Where(l => permitePrivado || l.REGRA == REGRA_PUBLICA)
                 .FirstOrDefault();
 
             if (live != null)

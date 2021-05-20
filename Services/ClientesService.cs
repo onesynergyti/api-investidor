@@ -1,4 +1,4 @@
-﻿using API_Investidor.Data.Entities;
+﻿using API_Investidor.Data;
 using API_Investidor.Models;
 using API_Investidor.Models.Clientes;
 using API_Investidor.Repositories;

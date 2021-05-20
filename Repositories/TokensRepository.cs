@@ -1,5 +1,4 @@
 ﻿using API_Investidor.Data;
-using API_Investidor.Data.Entities;
 using API_Investidor.Models.Login;
 using System;
 using System.Linq;
