@@ -1,17 +1,12 @@
-﻿using API_Investidor.Data.Entities;
-using API_Investidor.Models.JWT;
+﻿using API_Investidor.Models.JWT;
 using API_Investidor.Models.Login;
-using API_Investidor.Models.Zenvia;
 using API_Investidor.Repositories;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.IdentityModel.Tokens;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace API_Investidor.Services
 {
@@ -23,11 +18,11 @@ namespace API_Investidor.Services
     public class LoginService : RootService, ILoginService
     {
         private JwtTokenConfig _jwtTokenConfig;
-        private TokensRepository _tokensRepository;
+        private ITokensRepository _tokensRepository;
 
         public LoginService( 
             IActionContextAccessor actionContextAccessor,
-            TokensRepository tokensRepository,
+            ITokensRepository tokensRepository,
             JwtTokenConfig jwtTokenConfig) : base(actionContextAccessor)
         {
             _jwtTokenConfig = jwtTokenConfig;

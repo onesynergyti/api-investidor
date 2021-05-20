@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace API_Investidor.Services
+﻿namespace API_Investidor.Services
 {
     public interface ISMTPService
     {

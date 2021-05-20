@@ -4,9 +4,6 @@ using API_Investidor.Models.Clientes;
 using API_Investidor.Repositories;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API_Investidor.Services
 {

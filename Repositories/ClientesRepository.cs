@@ -3,10 +3,7 @@ using API_Investidor.Data.Entities;
 using API_Investidor.Helpers;
 using API_Investidor.Models;
 using API_Investidor.Models.Clientes;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace API_Investidor.Repositories
 {

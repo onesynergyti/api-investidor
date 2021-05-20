@@ -3,10 +3,6 @@ using API_Investidor.Models;
 using API_Investidor.Models.Artigos;
 using API_Investidor.Repositories;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API_Investidor.Services
 {
