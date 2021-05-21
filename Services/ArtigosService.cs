@@ -26,5 +26,4 @@ namespace API_Investidor.Services
 
         public Artigo GetArtigo(int idArtigo, bool permitePrivado) => _repository.GetArtigo(idArtigo, permitePrivado);
     }
-
 }

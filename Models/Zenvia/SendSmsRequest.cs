@@ -15,7 +15,7 @@ namespace API_Investidor.Models.Zenvia
 
         public string msg { get; set; }
 
-        public string callbackOption { get; set; } = "NONE"; // Valor padrão sem callback
+        public string callbackOption { get; set; }
 
         public string id { get; set; }
 
@@ -23,6 +23,6 @@ namespace API_Investidor.Models.Zenvia
 
         public bool flashSms { get; set; }
 
-        public int dataCoding { get; set; } = 8; // Mensagem acentuada até 70 caracteres
+        public int dataCoding { get; set; }
     }
 }

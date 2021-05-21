@@ -18,6 +18,7 @@ namespace API_Investidor.Configurations
             services.AddTransient<ILivesRepository, LivesRepository>();
             services.AddTransient<ITokensRepository, TokensRepository>();
             services.AddTransient<IChatRepository, ChatRepository>();
+            services.AddTransient<IGruposRepository, GruposRepository>();
 
             return services;
         }
