@@ -23,12 +23,26 @@ namespace API_Investidor.Repositories
 
         public PagedResult<EBook> GetEBooks(FiltroEBooksModel model, bool permitePrivado)
         {
-            return _InvestidorContext.ebook
+            var eBooksQuery = _InvestidorContext.ebook
                 .Include(e => e.CLIENTE)
                 .Where(e => model.Id == null || e.IDEBOOK == model.Id)
                 .Where(e => model.Nome == default || e.TITULO.Contains(model.Nome))
-                .Where(e => permitePrivado || e.REGRA == REGRA_PUBLICA)
-                .GetPaged(model.PageNumber, model.PageSize);
+                .Where(e => permitePrivado || e.REGRA == REGRA_PUBLICA);
+
+            switch (model.Ordenacao)
+            {
+                case ETipoOrdenacaoEBook.MaisRecentes:
+                    eBooksQuery = eBooksQuery.OrderByDescending(e => e.DATACADASTRO);
+                    break;
+                case ETipoOrdenacaoEBook.MaisVistos:
+                    eBooksQuery = eBooksQuery.OrderByDescending(e => e.CLICKS);
+                    break;
+                default:
+                    eBooksQuery = eBooksQuery.OrderBy(e => e.TITULO);
+                    break;
+            }
+
+            return eBooksQuery.GetPaged(model.PageNumber, model.PageSize);
         }
 
         public EBook GetEBook(int idEBook, bool permitePrivado)

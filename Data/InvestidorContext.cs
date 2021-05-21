@@ -20,6 +20,7 @@ namespace API_Investidor.Data
         public DbSet<Token> token { get; set; }
         public DbSet<Grupo> grupo { get; set; }
         public DbSet<Chat> chat { get; set; }
+        public DbSet<Parceiro> parceiro { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -102,6 +103,9 @@ namespace API_Investidor.Data
             modelBuilder.Entity<Chat>()
                 .Property(t => t.IDMENSAGEM)
                 .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Parceiro>()
+                .HasKey(t => t.IDPARCEIRO);
         }
     }
 }

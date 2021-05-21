@@ -19,6 +19,7 @@ namespace API_Investidor.Configurations
             services.AddTransient<ITokensRepository, TokensRepository>();
             services.AddTransient<IChatRepository, ChatRepository>();
             services.AddTransient<IGruposRepository, GruposRepository>();
+            services.AddTransient<IParceirosRepository, ParceirosRepository>();
 
             return services;
         }

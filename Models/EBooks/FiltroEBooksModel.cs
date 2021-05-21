@@ -10,5 +10,7 @@ namespace API_Investidor.Models.EBooks
         public int? Id { get; set; }
 
         public string Nome { get; set; }
+
+        public ETipoOrdenacaoEBook? Ordenacao { get; set; }
     }
 }

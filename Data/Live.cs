@@ -12,6 +12,8 @@ namespace API_Investidor.Data
 
         public int? IDCLIENTE { get; set; }
 
+        public string TITULO { get; set; }
+
         public string DESCRICAO_BREVE { get; set; }
 
         public string DESCRICAO_COMPLETA { get; set; }
