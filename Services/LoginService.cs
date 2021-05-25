@@ -31,7 +31,7 @@ namespace API_Investidor.Services
 
         public TokenInformation GerarJWT(LoginCheckCode dados)
         {
-            /*var token = _tokensRepository.ValidarClienteToken(dados);
+            var token = _tokensRepository.ValidarClienteToken(dados);
             
             if (token == null)
             {
@@ -42,12 +42,7 @@ namespace API_Investidor.Services
             var claims = new ClaimsIdentity(new Claim[]
             {
                     new Claim("IdCliente", token.IDCLIENTE.ToString())
-            }); */
-
-            var claims = new ClaimsIdentity(new Claim[]
-            {
-                    new Claim("idCliente", "1")
-            });
+            }); 
             
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_jwtTokenConfig.Key);

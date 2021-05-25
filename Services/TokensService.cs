@@ -55,13 +55,20 @@ namespace API_Investidor.Services
         {
             if (destino.Contains("@"))
             {
-                _SMTPService.EnviarCodigoEmailAsync(destino, token);
+                try
+                {
+                    _SMTPService.EnviarCodigoEmailAsync(destino, token);
+                }
+                catch(Exception ex)
+                {
+                    AddModelError("Erro no envio de e-mail: " + ex.Message);
+                }
             }
             else
             {
                 var retorno = await _zenviaService.EnviarCodigoSMSAsync(destino, token);
                 if (retorno.statusCode != "00")
-                    AddModelError(retorno.detailDescription);
+                    AddModelError("Erro no envio de SMS: " + retorno.detailDescription);
             }
         }
 

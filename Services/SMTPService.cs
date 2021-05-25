@@ -34,31 +34,24 @@ namespace API_Investidor.Services
 
         public bool EnviarCodigoEmailAsync(string email, string codigo)
         {
-            try
+            EmailMessage message = new EmailMessage();
+            message.Sender = new MailboxAddress("Self", _emailOptions.Value.Sender);
+            message.Reciever = new MailboxAddress("Self", email);
+            message.Subject = _emailOptions.Value.Assunto;
+            message.Content = _emailOptions.Value.MensagemCodigo.Replace(_emailOptions.Value.TagCodigo, codigo);
+            var mimeMessage = CriarMensagem(message);
+
+            using (SmtpClient smtpClient = new SmtpClient())
             {
-                EmailMessage message = new EmailMessage();
-                message.Sender = new MailboxAddress("Self", _emailOptions.Value.Sender);
-                message.Reciever = new MailboxAddress("Self", email);
-                message.Subject = _emailOptions.Value.Assunto;
-                message.Content = _emailOptions.Value.MensagemCodigo.Replace(_emailOptions.Value.TagCodigo, codigo);
-                var mimeMessage = CriarMensagem(message);
-
-                using (SmtpClient smtpClient = new SmtpClient())
-                {
-                    smtpClient.Connect(_emailOptions.Value.SmtpServer,
-                    _emailOptions.Value.Port, true);
-                    smtpClient.Authenticate(_emailOptions.Value.UserName,
-                    _emailOptions.Value.Password);
-                    smtpClient.Send(mimeMessage);
-                    smtpClient.Disconnect(true);
-                }
-
-                return true;
+                smtpClient.Connect(_emailOptions.Value.SmtpServer,
+                _emailOptions.Value.Port, true);
+                smtpClient.Authenticate(_emailOptions.Value.UserName,
+                _emailOptions.Value.Password);
+                smtpClient.Send(mimeMessage);
+                smtpClient.Disconnect(true);
             }
-            catch(Exception erro)
-            {                
-                return false;
-            }
+
+            return true;
         }
     }
 }
