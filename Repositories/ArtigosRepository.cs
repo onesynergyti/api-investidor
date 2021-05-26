@@ -14,7 +14,7 @@ namespace API_Investidor.Repositories
     {
         PagedResult<Artigo> GetArtigos(FiltroArtigosModel model, bool permitePrivado);
 
-        Artigo GetArtigo(int idArtigo, bool permitePrivado);
+        PagedResult<Artigo> GetArtigo(int idArtigo, bool permitePrivado);
     }
 
     public class ArtigosRepository : RootRepository<Artigo>, IArtigosRepository
@@ -33,7 +33,7 @@ namespace API_Investidor.Repositories
                 .GetPaged(model.PageNumber, model.PageSize);
         }
 
-        public Artigo GetArtigo(int idArtigo, bool permitePrivado)
+        public PagedResult<Artigo> GetArtigo(int idArtigo, bool permitePrivado)
         {
             var artigo = _InvestidorContext.artigo
                 .Include(a => a.CATEGORIA)
@@ -48,7 +48,14 @@ namespace API_Investidor.Repositories
                 Update(artigo);
             }
 
-            return artigo;
+            var artigos = _InvestidorContext.artigo
+                .Include(a => a.CATEGORIA)
+                .Include(a => a.CLIENTE)
+                .Where(a => a.IDARTIGO == idArtigo)
+                .Where(a => permitePrivado || a.REGRA == REGRA_PUBLICA)
+                .GetPaged(1, 1);
+
+            return artigos;
         }
     }
 }
