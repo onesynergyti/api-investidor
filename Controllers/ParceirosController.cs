@@ -23,5 +23,9 @@ namespace API_Investidor.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<Parceiro>))]
         public IActionResult Get([FromQuery] PagingParameters model) => CustomResponse(_service.GetParceiros(model));
+
+        [HttpGet("{idParceiro}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<Parceiro>))]
+        public IActionResult GetParceiro(int idParceiro) => CustomResponse(_service.GetParceiro(idParceiro));
     }
 }

@@ -20,7 +20,7 @@ namespace API_Investidor.Controllers
         public IActionResult ObterCodigo([FromBody] TokenAskCode dados)
         {
             _service.GerarTokenAsync(dados);
-            return CustomResponse();
+            return CustomResponse(null, 201);
         }
     }
 }

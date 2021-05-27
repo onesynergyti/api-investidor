@@ -7067,19 +7067,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Claudio Camargos\\.nuget\\packages\\": {}
+    "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\API-Investidor.csproj",
+      "projectUniqueName": "C:\\Projetos\\api-investidor\\API-Investidor.csproj",
       "projectName": "API-Investidor",
-      "projectPath": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\API-Investidor.csproj",
-      "packagesPath": "C:\\Users\\Claudio Camargos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Claudio Camargos\\Documents\\Projetos\\Freelancers\\api-investidor\\obj\\",
+      "projectPath": "C:\\Projetos\\api-investidor\\API-Investidor.csproj",
+      "packagesPath": "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\",
+      "outputPath": "C:\\Projetos\\api-investidor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Claudio Camargos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AS.DESKTOP-S5TCQRE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7087,8 +7087,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://curtanuget.azurewebsites.net/nuget": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -7157,7 +7156,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

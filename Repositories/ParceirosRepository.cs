@@ -11,6 +11,8 @@ namespace API_Investidor.Repositories
     public interface IParceirosRepository : IRootRepository<Parceiro>
     {
         PagedResult<Parceiro> GetParceiros(PagingParameters model);
+
+        PagedResult<Parceiro> GetParceiro(int idParceiro);
     }
 
     public class ParceirosRepository : RootRepository<Parceiro>, IParceirosRepository
@@ -23,6 +25,12 @@ namespace API_Investidor.Repositories
                 .OrderBy(c => c.NOMEPARCEIRO)
                 .GetPaged(model.PageNumber, model.PageSize);
         }
-    }
 
+        public PagedResult<Parceiro> GetParceiro(int idParceiro)
+        {
+            return _InvestidorContext.parceiro
+                .Where(p => p.IDPARCEIRO == idParceiro)
+                .GetPaged(1, 1);
+        }
+    }
 }

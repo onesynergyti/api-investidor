@@ -1,4 +1,5 @@
 ﻿using API_Investidor.Data;
+using API_Investidor.Helpers;
 using API_Investidor.Models;
 using API_Investidor.Services;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +23,6 @@ namespace API_Investidor.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<Grupo>))]
-        public IActionResult Get([FromQuery] PagingParameters model) => CustomResponse(_service.GetGrupos(model));
+        public IActionResult Get([FromQuery] PagingParameters model) => CustomResponse(_service.GetGrupos(model, User.GetClienteLogado()));
     }
 }

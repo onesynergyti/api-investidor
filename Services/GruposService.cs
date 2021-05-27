@@ -11,7 +11,7 @@ namespace API_Investidor.Services
 {    
     public interface IGruposService
     {
-        PagedResult<Grupo> GetGrupos(PagingParameters model);
+        PagedResult<Grupo> GetGrupos(PagingParameters model, bool permitePrivado);
     }
 
     public class GruposService : RootService, IGruposService
@@ -23,6 +23,6 @@ namespace API_Investidor.Services
             _repository = repository;
         }
 
-        public PagedResult<Grupo> GetGrupos(PagingParameters model) => _repository.GetGrupos(model);
+        public PagedResult<Grupo> GetGrupos(PagingParameters model, bool permitePrivado) => _repository.GetGrupos(model, permitePrivado);
     }
 }

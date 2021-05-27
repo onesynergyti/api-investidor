@@ -41,6 +41,11 @@ namespace API_Investidor.Data
         public int? VIEWS { get; set; } = 0;
 
         [NotMapped]
+        public string ID { 
+            get => LINK.Length >= 11 ? LINK.Substring(LINK.Length - 11, 11) : LINK;
+        }
+
+        [NotMapped]
         public Cliente CLIENTE { get; set; }
 
         [NotMapped]

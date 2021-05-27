@@ -12,6 +12,8 @@ namespace API_Investidor.Services
     public interface IParceirosService
     {
         PagedResult<Parceiro> GetParceiros(PagingParameters model);
+
+        PagedResult<Parceiro> GetParceiro(int idParceiro);
     }
 
     public class ParceirosService : RootService, IParceirosService
@@ -24,6 +26,7 @@ namespace API_Investidor.Services
         }
 
         public PagedResult<Parceiro> GetParceiros(PagingParameters model) => _repository.GetParceiros(model);
-    }
 
+        public PagedResult<Parceiro> GetParceiro(int idParceiro) => _repository.GetParceiro(idParceiro);
+    }
 }

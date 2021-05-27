@@ -17,6 +17,6 @@ namespace API_Investidor.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult Login([FromBody] LoginCheckCode dados) => CustomResponse(_service.GerarJWT(dados));
+        public IActionResult Login([FromBody] LoginCheckCode dados) => CustomResponse(_service.GerarJWT(dados), 201);
     }
 }

@@ -105,7 +105,7 @@ namespace API_Investidor.Services
             };
             _repository.Add(token);
 
-            await EnviarEmailOuSMS(dados.Auth, token.AUTH);
+            await EnviarEmailOuSMS(dados.Auth, token.CODIGO);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace API_Investidor.Controllers
         private ICollection<string> Erros = new List<string>();
 
         [NonAction]
-        protected IActionResult CustomResponse(object result = null)
+        protected IActionResult CustomResponse(object result = null, int codigo = 200)
         {
             if (!ModelState.IsValid)
                 AddModelErrors(ModelState);
@@ -24,14 +24,25 @@ namespace API_Investidor.Controllers
                 {
                     { "Mensagens", Erros.ToArray()}
                 }));
-            }
+            }            
 
             if (result == null || result == default)
-                return NoContent();
+            {
+                switch (codigo)
+                {
+                    case 201: return Created("Post", result);
+                    default: return NoContent();
+                }
+            }            
 
             Response.Headers.Add("Access-Control-Expose-Headers", "access-control-allow-origin");
 
-            return Ok(result);
+            switch(codigo)
+            {
+                case 201: return Created("Post", result);
+                default: return Ok(result);
+            }
+
         }
 
         private void AddModelErrors(ModelStateDictionary modelState)
