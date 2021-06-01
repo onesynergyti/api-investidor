@@ -14,7 +14,7 @@ namespace API_Investidor.Repositories
     {
         PagedResult<EBook> GetEBooks(FiltroEBooksModel model, bool permitePrivado);
 
-        PagedResult<EBook> GetEBook(int idEBook, bool permitePrivado);
+        EBook GetEBook(int idEBook, bool permitePrivado);
     }
 
     public class EBooksRepository : RootRepository<EBook>, IEBooksRepository
@@ -45,7 +45,7 @@ namespace API_Investidor.Repositories
             return eBooksQuery.GetPaged(model.PageNumber, model.PageSize);
         }
 
-        public PagedResult<EBook> GetEBook(int idEBook, bool permitePrivado)
+        public EBook GetEBook(int idEBook, bool permitePrivado)
         {
             var ebook = _InvestidorContext.ebook
                 .Where(e => e.IDEBOOK == idEBook)
@@ -58,12 +58,7 @@ namespace API_Investidor.Repositories
                 Update(ebook);
             }
 
-            var ebooks = _InvestidorContext.ebook
-                .Where(e => e.IDEBOOK == idEBook)
-                .Where(e => permitePrivado || e.REGRA == REGRA_PUBLICA)
-                .GetPaged(1, 1);
-
-            return ebooks;
+            return ebook;
         }
     }
 }

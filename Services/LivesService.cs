@@ -14,7 +14,7 @@ namespace API_Investidor.Services
     {
         PagedResult<Live> GetLives(FiltroLivesModel model, bool permitePrivado);
 
-        PagedResult<Live> GetLive(int idLive, bool permitePrivado);
+        Live GetLive(int idLive, bool permitePrivado);
     }
 
     public class LivesService : RootService, ILivesService
@@ -28,6 +28,6 @@ namespace API_Investidor.Services
 
         public PagedResult<Live> GetLives(FiltroLivesModel model, bool permitePrivado) => _repository.GetLives(model, permitePrivado);
 
-        public PagedResult<Live> GetLive(int idLive, bool permitePrivado) => _repository.GetLive(idLive, permitePrivado);
+        public Live GetLive(int idLive, bool permitePrivado) => _repository.GetLive(idLive, permitePrivado);
     }
 }

@@ -10,7 +10,7 @@ namespace API_Investidor.Services
     {
         PagedResult<Artigo> GetArtigos(FiltroArtigosModel model, bool permitePrivado);
 
-        PagedResult<Artigo> GetArtigo(int idArtigo, bool permitePrivado);
+        Artigo GetArtigo(int idArtigo, bool permitePrivado);
     }
 
     public class ArtigosService : RootService, IArtigosService
@@ -24,6 +24,6 @@ namespace API_Investidor.Services
 
         public PagedResult<Artigo> GetArtigos(FiltroArtigosModel model, bool permitePrivado) => _repository.GetArtigos(model, permitePrivado);
 
-        public PagedResult<Artigo> GetArtigo(int idArtigo, bool permitePrivado) => _repository.GetArtigo(idArtigo, permitePrivado);
+        public Artigo GetArtigo(int idArtigo, bool permitePrivado) => _repository.GetArtigo(idArtigo, permitePrivado);
     }
 }

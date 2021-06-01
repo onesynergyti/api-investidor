@@ -10,7 +10,7 @@ namespace API_Investidor.Services
     {
         PagedResult<EBook> GetEBooks(FiltroEBooksModel model, bool permitePrivado);
 
-        PagedResult<EBook> GetEBook(int idArtigo, bool permitePrivado);
+        EBook GetEBook(int idArtigo, bool permitePrivado);
     }
 
     public class EBooksService : RootService, IEBooksService
@@ -24,6 +24,6 @@ namespace API_Investidor.Services
 
         public PagedResult<EBook> GetEBooks(FiltroEBooksModel model, bool permitePrivado) => _repository.GetEBooks(model, permitePrivado);
 
-        public PagedResult<EBook> GetEBook(int idArtigo, bool permitePrivado) => _repository.GetEBook(idArtigo, permitePrivado);
+        public EBook GetEBook(int idArtigo, bool permitePrivado) => _repository.GetEBook(idArtigo, permitePrivado);
     }
 }

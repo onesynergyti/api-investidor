@@ -14,7 +14,7 @@ namespace API_Investidor.Repositories
     {
         PagedResult<Live> GetLives(FiltroLivesModel model, bool permitePrivado);
 
-        PagedResult<Live> GetLive(int idLive, bool permitePrivado);
+        Live GetLive(int idLive, bool permitePrivado);
     }
 
     public class LivesRepository : RootRepository<Live>, ILivesRepository
@@ -32,7 +32,7 @@ namespace API_Investidor.Repositories
                 .GetPaged(model.PageNumber, model.PageSize);
         }
 
-        public PagedResult<Live> GetLive(int idLive, bool permitePrivado)
+        public Live GetLive(int idLive, bool permitePrivado)
         {
             var live = _InvestidorContext.live
                 .Where(l => l.IDLIVE == idLive)
@@ -45,12 +45,7 @@ namespace API_Investidor.Repositories
                 Update(live);
             }
 
-            var lives = _InvestidorContext.live
-                .Where(l => l.IDLIVE == idLive)
-                .Where(l => permitePrivado || l.REGRA == REGRA_PUBLICA)
-                .GetPaged(1, 1);
-
-            return lives;
+            return live;
         }
     }
 }

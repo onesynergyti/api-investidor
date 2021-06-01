@@ -13,7 +13,7 @@ namespace API_Investidor.Services
     {
         PagedResult<Parceiro> GetParceiros(PagingParameters model);
 
-        PagedResult<Parceiro> GetParceiro(int idParceiro);
+        Parceiro GetParceiro(int idParceiro);
     }
 
     public class ParceirosService : RootService, IParceirosService
@@ -27,6 +27,6 @@ namespace API_Investidor.Services
 
         public PagedResult<Parceiro> GetParceiros(PagingParameters model) => _repository.GetParceiros(model);
 
-        public PagedResult<Parceiro> GetParceiro(int idParceiro) => _repository.GetParceiro(idParceiro);
+        public Parceiro GetParceiro(int idParceiro) => _repository.GetParceiro(idParceiro);
     }
 }

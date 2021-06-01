@@ -8,7 +8,7 @@ namespace API_Investidor.Helpers
     {
         public static bool GetClienteLogado(this ClaimsPrincipal claimsPrincipal)
         {
-            return claimsPrincipal.Claims.Where(c => c.Type == "idCliente").FirstOrDefault() != null;
+            return claimsPrincipal.Claims.Where(c => c.Type == "IdCliente").FirstOrDefault() != null;
         }
 
         public static int GetIdCliente(this ClaimsPrincipal claimsPrincipal)
