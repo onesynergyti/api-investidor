@@ -14,6 +14,7 @@ namespace API_Investidor.Configurations
         {
             services.Configure<ZenviaOptions>(configuration.GetSection("ZenviaOptions"));
             services.Configure<EmailOptions>(configuration.GetSection("EmailOptions"));
+            services.Configure<NotificationHubOptions>(configuration.GetSection("NotificationHubOptions"));
 
             return services;
         }

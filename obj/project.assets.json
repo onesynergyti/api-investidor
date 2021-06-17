@@ -74,6 +74,19 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.Azure.NotificationHubs/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Memory": "3.1.8",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Azure.NotificationHubs.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Azure.NotificationHubs.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -528,7 +541,7 @@
           "lib/netstandard2.1/NETCore.MailKit.dll": {}
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -2143,6 +2156,21 @@
         "microsoft.aspnetcore.mvc.versioning.nuspec"
       ]
     },
+    "Microsoft.Azure.NotificationHubs/4.1.0": {
+      "sha512": "C2SssjX3e6/HIo1OCImQDDVOn64d1+gkgEmgxJryzkwixyivJHWH2YIgxZs33pyzVQcZWx5PR2tqLkQ7riSq8Q==",
+      "type": "package",
+      "path": "microsoft.azure.notificationhubs/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Microsoft.Azure.NotificationHubs.dll",
+        "lib/net461/Microsoft.Azure.NotificationHubs.xml",
+        "lib/netstandard2.0/Microsoft.Azure.NotificationHubs.dll",
+        "lib/netstandard2.0/Microsoft.Azure.NotificationHubs.xml",
+        "microsoft.azure.notificationhubs.4.1.0.nupkg.sha512",
+        "microsoft.azure.notificationhubs.nuspec"
+      ]
+    },
     "Microsoft.CSharp/4.7.0": {
       "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
@@ -2974,10 +3002,10 @@
         "netcore.mailkit.nuspec"
       ]
     },
-    "Newtonsoft.Json/12.0.2": {
-      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.2",
+      "path": "newtonsoft.json/12.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3000,8 +3028,9 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.2.nupkg.sha512",
-        "newtonsoft.json.nuspec"
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Newtonsoft.Json.Bson/1.0.2": {
@@ -7059,6 +7088,7 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.6",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.6",
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.0.0",
+      "Microsoft.Azure.NotificationHubs >= 4.1.0",
       "Microsoft.EntityFrameworkCore >= 5.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.6",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.9",
@@ -7116,6 +7146,10 @@
           "Microsoft.AspNetCore.Mvc.Versioning": {
             "target": "Package",
             "version": "[5.0.0, )"
+          },
+          "Microsoft.Azure.NotificationHubs": {
+            "target": "Package",
+            "version": "[4.1.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

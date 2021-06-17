@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7MPPMlzZtfS6h1KtR4lTlvGqCvf8HKFsi7jYp3cX8JLkxaymsF0bR5VMf4y0bzIYiCZKAHvx5kyPTz7V/9+8dQ==",
+  "dgSpecHash": "RvTkdjJoyGm7SbhJhuf7KChxJogo2BBi27szSCR5EaJVKQ/v7wF1+8PrZfeth3SDdA1nKlAxHgBP+B0YB6EgWg==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\api-investidor\\API-Investidor.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.6\\microsoft.aspnetcore.jsonpatch.5.0.6.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.6\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.6.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\microsoft.azure.notificationhubs\\4.1.0\\microsoft.azure.notificationhubs.4.1.0.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
@@ -42,7 +43,7 @@
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\mimekit\\2.6.0\\mimekit.2.6.0.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\netcore.mailkit\\2.0.3\\netcore.mailkit.2.0.3.nupkg.sha512",
-    "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\portable.bouncycastle\\1.8.5\\portable.bouncycastle.1.8.5.nupkg.sha512",
     "C:\\Users\\AS.DESKTOP-S5TCQRE\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
