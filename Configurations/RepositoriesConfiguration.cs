@@ -20,6 +20,7 @@ namespace API_Investidor.Configurations
             services.AddTransient<IChatRepository, ChatRepository>();
             services.AddTransient<IGruposRepository, GruposRepository>();
             services.AddTransient<IParceirosRepository, ParceirosRepository>();
+            services.AddTransient<IGrupoClienteRepository, GrupoClienteRepository>();
 
             return services;
         }

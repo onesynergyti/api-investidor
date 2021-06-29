@@ -30,5 +30,8 @@ namespace API_Investidor.Data
 
         [NotMapped]
         public Categoria CATEGORIA { get; set; }
+
+        [NotMapped]
+        public ICollection<GrupoCliente> CLIENTESGRUPO { get; set; }
     }
 }

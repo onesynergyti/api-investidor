@@ -15,14 +15,20 @@ namespace API_Investidor.Controllers
     public class GruposController : RootController
     {
         private readonly IGruposService _service;
+        private readonly IGrupoClienteService _grupoClienteService;
 
-        public GruposController(IGruposService service)
+        public GruposController(IGruposService service, IGrupoClienteService grupoClienteService)
         {
             _service = service;
+            _grupoClienteService = grupoClienteService;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<Grupo>))]
         public IActionResult Get([FromQuery] PagingParameters model) => CustomResponse(_service.GetGrupos(model, User.GetClienteLogado()));
+
+        [HttpGet("{idGrupo}/{idCliente}/GrupoCliente")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GrupoCliente))]
+        public IActionResult GetGrupoClente(int idGrupo, int idCliente) => CustomResponse(_grupoClienteService.GetGrupoCliente(idCliente, idGrupo));
     }
 }

@@ -21,6 +21,7 @@ namespace API_Investidor.Data
         public DbSet<Grupo> grupo { get; set; }
         public DbSet<Chat> chat { get; set; }
         public DbSet<Parceiro> parceiro { get; set; }
+        public DbSet<GrupoCliente> grupo_cliente { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -106,6 +107,19 @@ namespace API_Investidor.Data
 
             modelBuilder.Entity<Parceiro>()
                 .HasKey(t => t.IDPARCEIRO);
+
+            modelBuilder.Entity<GrupoCliente>()
+                .HasKey(t => new { t.IDCLIENTE, t.IDGRUPO });
+
+            modelBuilder.Entity<GrupoCliente>()
+                .HasOne(t => t.CLIENTE)
+                .WithMany(t => t.GRUPOSCLIENTE)
+                .HasForeignKey("IDCLIENTE");
+
+            modelBuilder.Entity<GrupoCliente>()
+                .HasOne(t => t.GRUPO)
+                .WithMany(t => t.CLIENTESGRUPO)
+                .HasForeignKey("IDGRUPO");
         }
     }
 }

@@ -198,3 +198,4 @@ C:\Projetos\api-investidor\obj\Debug\net5.0\API-Investidor.dll
 C:\Projetos\api-investidor\obj\Debug\net5.0\ref\API-Investidor.dll
 C:\Projetos\api-investidor\obj\Debug\net5.0\API-Investidor.pdb
 C:\Projetos\api-investidor\obj\Debug\net5.0\API-Investidor.genruntimeconfig.cache
+C:\Projetos\api-investidor\bin\Debug\net5.0\Microsoft.Azure.NotificationHubs.dll

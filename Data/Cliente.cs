@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,5 +25,8 @@ namespace API_Investidor.Data
         public string ICONE { get; set; }
 
         public string TELEFONE { get; set; }
+
+        [NotMapped]
+        public ICollection<GrupoCliente> GRUPOSCLIENTE { get; set; }
     }
 }
