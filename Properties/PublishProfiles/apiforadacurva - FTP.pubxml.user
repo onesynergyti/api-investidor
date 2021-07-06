@@ -8,29 +8,29 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp7iQVM++Zk+pJm4b1ryHmQAAAAACAAAAAAAQZgAAAAEAACAAAACrnxhK+SPhCUDsJUEumO4n9+0AS3w7Q4AMxG2FPwH7hAAAAAAOgAAAAAIAACAAAAC8hnJSSGAqEEmjQFd7CHZnsG643EQGNOGRmS2gGhLx5YAAAADxSO7jHrBL7bS14fj7buOfTwcsspiDD5mIqfl0OwsTVrxy1kjriqGIYAwq+1YLJ4l6hCofSN03JvTp8Gi17Fxqq94Z+dXpShwMLgm/UJxyRCv75zVtQlhkK+aoq8BZFZRy1x1hSqJReDM3+RbaRpFT7UVwsvDIXb5IHAd7S7wFE0AAAAAWHHeEd3nW3eWrg4B0iCihwYE4a1dl63DFQkNiJfhhLtXx4atZZWevMnIL0vUFjUJL4GOK4RdymZ6gHg4kL2bS</EncryptedPassword>
     <_PublishTargetUrl>ftp://waws-prod-dm1-207.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
-    <History>True|2021-06-02T17:11:17.2709211Z;False|2021-06-01T09:19:25.0796737-03:00;True|2021-05-27T12:14:39.1927102-03:00;True|2021-05-27T11:12:01.1236234-03:00;False|2021-05-27T11:08:58.6087628-03:00;False|2021-05-27T11:05:40.3432323-03:00;False|2021-05-27T11:00:57.9105322-03:00;True|2021-05-27T10:11:01.1441865-03:00;True|2021-05-27T09:26:53.4871051-03:00;</History>
+    <History>True|2021-07-06T12:36:39.4955929Z;True|2021-06-29T14:08:40.6043625-03:00;True|2021-06-02T14:11:17.2709211-03:00;False|2021-06-01T09:19:25.0796737-03:00;True|2021-05-27T12:14:39.1927102-03:00;True|2021-05-27T11:12:01.1236234-03:00;False|2021-05-27T11:08:58.6087628-03:00;False|2021-05-27T11:05:40.3432323-03:00;False|2021-05-27T11:00:57.9105322-03:00;True|2021-05-27T10:11:01.1441865-03:00;True|2021-05-27T09:26:53.4871051-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="API-Investidor.deps.json">
-      <publishTime>06/02/2021 14:07:09</publishTime>
+      <publishTime>07/06/2021 09:33:37</publishTime>
     </File>
     <File Include="API-Investidor.dll">
-      <publishTime>06/02/2021 14:07:09</publishTime>
+      <publishTime>07/06/2021 09:33:37</publishTime>
     </File>
     <File Include="API-Investidor.exe">
-      <publishTime>06/02/2021 14:07:09</publishTime>
+      <publishTime>07/06/2021 09:33:37</publishTime>
     </File>
     <File Include="API-Investidor.pdb">
-      <publishTime>06/02/2021 14:07:09</publishTime>
+      <publishTime>07/06/2021 09:33:37</publishTime>
     </File>
     <File Include="API-Investidor.runtimeconfig.json">
-      <publishTime>05/27/2021 09:24:10</publishTime>
+      <publishTime>06/29/2021 14:06:02</publishTime>
     </File>
     <File Include="appsettings.Development.json">
-      <publishTime>05/26/2021 23:45:18</publishTime>
+      <publishTime>06/15/2021 11:39:40</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>05/26/2021 23:45:18</publishTime>
+      <publishTime>06/15/2021 11:39:43</publishTime>
     </File>
     <File Include="BouncyCastle.Crypto.dll">
       <publishTime>02/07/2019 23:50:10</publishTime>
@@ -49,6 +49,9 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     </File>
     <File Include="Microsoft.AspNetCore.Mvc.Versioning.dll">
       <publishTime>02/09/2021 00:13:28</publishTime>
+    </File>
+    <File Include="Microsoft.Azure.NotificationHubs.dll">
+      <publishTime>09/30/2020 20:08:12</publishTime>
     </File>
     <File Include="Microsoft.Data.SqlClient.dll">
       <publishTime>08/25/2020 20:24:48</publishTime>
@@ -99,7 +102,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>11/27/2018 21:10:18</publishTime>
     </File>
     <File Include="Newtonsoft.Json.dll">
-      <publishTime>04/21/2019 22:06:16</publishTime>
+      <publishTime>08/11/2019 21:56:44</publishTime>
     </File>
     <File Include="runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
       <publishTime>08/25/2020 20:25:12</publishTime>
@@ -162,7 +165,7 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>11/15/2019 05:37:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>06/02/2021 14:07:10</publishTime>
+      <publishTime>07/06/2021 09:33:38</publishTime>
     </File>
   </ItemGroup>
 </Project>

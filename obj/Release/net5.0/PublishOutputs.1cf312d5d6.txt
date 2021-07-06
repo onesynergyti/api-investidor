@@ -10,6 +10,7 @@ C:\Projetos\api-investidor\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Au
 C:\Projetos\api-investidor\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.JsonPatch.dll
 C:\Projetos\api-investidor\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Projetos\api-investidor\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Projetos\api-investidor\obj\Release\net5.0\PubTmp\Out\Microsoft.Azure.NotificationHubs.dll
 C:\Projetos\api-investidor\obj\Release\net5.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 C:\Projetos\api-investidor\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 C:\Projetos\api-investidor\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll

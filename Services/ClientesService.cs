@@ -11,6 +11,8 @@ namespace API_Investidor.Services
     {
         PagedResult<Cliente> GetClientes(FiltroClientesModel model);
 
+        Cliente GetCliente(int idCliente);
+
         void Add(ClienteModelPost cliente);
 
         void Update(ClienteModelPut cliente);
@@ -28,6 +30,8 @@ namespace API_Investidor.Services
         }
 
         public PagedResult<Cliente> GetClientes(FiltroClientesModel model) => _repository.GetClientes(model);
+
+        public Cliente GetCliente(int idCliente) => _repository.GetCliente(idCliente);
 
         public void Add(ClienteModelPost cliente)
         {

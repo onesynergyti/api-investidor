@@ -1,4 +1,5 @@
 ﻿using API_Investidor.Data;
+using API_Investidor.Helpers;
 using API_Investidor.Models;
 using API_Investidor.Models.Clientes;
 using API_Investidor.Services;
@@ -24,6 +25,14 @@ namespace API_Investidor.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<Cliente>))]
         public IActionResult Get([FromQuery] FiltroClientesModel model) => CustomResponse(_service.GetClientes(model));
+
+        [HttpGet("{idCliente}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<Cliente>))]
+        public IActionResult GetCliente(int idCliente) => CustomResponse(_service.GetCliente(idCliente));
+
+        [HttpGet("ClienteLogado")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResult<Cliente>))]
+        public IActionResult GetClienteLogado() => CustomResponse(_service.GetCliente(User.GetIdCliente()));
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
